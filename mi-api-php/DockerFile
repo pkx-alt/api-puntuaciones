@@ -1,0 +1,14 @@
+# Usa una imagen oficial de PHP con servidor embebido
+FROM php:8.2-cli
+
+# Copia todos los archivos PHP al contenedor
+COPY . /app
+
+# Establece el directorio de trabajo
+WORKDIR /app
+
+# Expone el puerto 80
+EXPOSE 80
+
+# Comando para iniciar el servidor embebido de PHP
+CMD ["php", "-S", "0.0.0.0:80"]
